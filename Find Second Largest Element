@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int arr[] = {4, 7, 1, 9, 2};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int maxVal = arr[0];
+    int secVal = -1;
+
+    for (int i = 1; i < n; i++) {
+
+        if (arr[i] > maxVal) {
+            secVal = maxVal;
+            maxVal = arr[i];
+        }
+
+        else if (arr[i] > secVal && arr[i] != maxVal) {
+            secVal = arr[i];
+        }
+    }
+
+    cout << "Largest element = " << maxVal << endl;
+    cout << "Second largest element = " << secVal << endl;
+
+    return 0;
+}
